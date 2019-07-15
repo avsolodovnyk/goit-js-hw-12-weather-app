@@ -17,6 +17,7 @@ module.exports = env => ({
         include: paths.SRC_DIR,
         use: ['babel-loader'],
       },
+
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
@@ -31,7 +32,7 @@ module.exports = env => ({
         ],
       },
       {
-        test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
+        test: /\.(eot|woff|ttf|woff(2))?(\?[a-z0-9#=&.]+)?$/,
         use: [
           {
             loader: 'url-loader',

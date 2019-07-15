@@ -1,7 +1,9 @@
 'use strict';
 import PNotify from 'pnotify/dist/es/PNotify';
 import PNotifyButtons from 'pnotify/dist/es/PNotifyButtons';
-import '../../node_modules/basiclightbox/dist/basicLightbox.min';
+import PNotifyStyleMaterial from 'pnotify/dist/es/PNotifyStyleMaterial.js';
+PNotify.defaults.styling = 'material';
+PNotify.defaults.icons = 'material';
 
 const refs = {
   secWeather: document.querySelector('#weather'),
@@ -37,6 +39,7 @@ export function notifyOnError(errorCode) {
   } else {
     text = 'Неизвестная ошибка';
   }
+
   PNotify.error({
     title: 'Ошибка',
     text: text,
